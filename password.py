@@ -16,3 +16,6 @@ def generate_password(length, include_punctuation):
 
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
+
+def main():
+    print("Welcome to the Random Password Generator!")
