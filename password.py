@@ -17,5 +17,18 @@ def generate_password(length, include_punctuation):
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
+
+# While loop to obtain valid input for desired PW length
+# Minimum length of 4, if-else statement
 def main():
     print("Welcome to the Random Password Generator!")
+
+    while True:
+        try:
+            length = int(input("\nEnter the desired password length (minimum 4 characters): "))
+            if length >= 4:
+                break
+            else:
+                print("Invalid input. Please enter an integer greater than or equal to 4.")
+        except ValueError:
+            print("Invalid input. Please enter an integer.")
