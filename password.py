@@ -20,6 +20,7 @@ def generate_password(length, include_punctuation):
 
 # While loop to obtain valid input for desired PW length
 # Minimum length of 4, if-else statement
+# Include puncuation if desired, if not password will not include puncuation
 def main():
     print("Welcome to the Random Password Generator!")
 
@@ -32,3 +33,11 @@ def main():
                 print("Invalid input. Please enter an integer greater than or equal to 4.")
         except ValueError:
             print("Invalid input. Please enter an integer.")
+
+    include_punctuation = input("Do you want to include punctuation in your password? (Y/N): ").upper() == 'Y'
+
+    password = generate_password(length, include_punctuation)
+    print(f"\nYour generated password is: {password}")
+
+if __name__ == "__main__":
+    main()
